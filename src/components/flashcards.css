@@ -1,0 +1,17 @@
+
+
+#flashcards{
+    width:90%;
+    margin: auto;
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.flashcard{
+    float: left;
+    width:100%;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: row;
+}
