@@ -6,21 +6,32 @@ class AddFlashcard extends Component {
         title: ''
     };
 
-    // onSubmit = (e) => {
-    //     e.preventDefault();
-    //     this.props.addTodo(this.state.title);
-    //     this.setState({title: ''})
-    // };
+    onSubmit = (e) => {
+        e.preventDefault();
+        // this.props.addTodo(this.state.title);
+        // this.setState({title: ''})
+        console.log('pressed');
+    };
 
     render() {
         return (
-            <form onSubmit={this.onSubmit} style={{display: 'flex'}}>
-                <input type='text' name='title' placeholder='Add Todo ...' style={{flex: '10', padding: '5px'}} value={this.state.title} onChange={this.onChange}/>
-                <input type='submit' value='submit' className='btn' style={{flex: '1'}}/>
-            </form>
+            <div style={{width:'100%', textAlign: 'center'}}>
+                <form onSubmit={this.onSubmit}>
+                    <input type='submit' value='Add flashcard' style={addStyle}/>
+                </form>
+            </div>
         )
     }
+
 }
+
+const addStyle = {
+    padding: '30px',
+    border: '2px dashed rgb(191, 191, 191)',
+    background: 'white',
+    cursor: 'pointer',
+    margin: '20px',
+};
 
 
 export default AddFlashcard;

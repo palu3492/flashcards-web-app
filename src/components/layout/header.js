@@ -5,7 +5,9 @@ class Header extends Component {
     render() {
         return (
             <div style={headerStyle}>
-                <h1>Online Flashcards</h1>
+                <div style={titleContainer}>
+                    <h2>Flashcards</h2>
+                </div>
             </div>
         )
     }
@@ -22,9 +24,16 @@ const headerStyle = {
     gridArea: 'header',
     background: '#00263e',
     color: '#fff',
-    textAlign: 'center',
-    padding: '10px',
-    height: '76px'
+    textAlign: 'left',
+    height: '76px',
+};
+
+const titleContainer = {
+    height: '76px',
+    width: '100%',
+    display: 'flex',
+    alignItems: 'center',
+    padding: '10px'
 };
 
 export default Header;

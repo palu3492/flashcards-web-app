@@ -14,17 +14,29 @@ a {
   text-decoration: none;
 }
 
+input[type=submit]{
+    outline: none;
+    cursor: pointer;
+}
+
 #container{
     display: grid;
-    grid-gap: 10px;
     grid-template-columns: 1fr 6fr 1fr;
     grid-template-rows: auto calc(100vh - 76px) 0;
     grid-template-areas:
-            "header header header"
+            "side1 header side2"
             ". content ."
             "footer footer footer";
-    grid-row-gap: 0;
-    grid-column-gap: 0;
+}
+
+#side-left{
+    grid-area: side1;
+    background: #00263e;
+}
+
+#side-right{
+    grid-area: side2;
+    background: #00263e;
 }
 
 #content{
