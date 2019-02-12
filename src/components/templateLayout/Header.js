@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom'
 // import PropTypes from 'prop-types'
 
 class Header extends Component {
@@ -6,7 +7,12 @@ class Header extends Component {
         return (
             <div style={headerStyle}>
                 <div style={titleContainer}>
-                    <h2>Flashcards</h2>
+                    <Link to="/">
+                        <div style={{textAlign: 'center', cursor: 'pointer'}}>
+                            <h1>Quiz Saver</h1>
+                            <h5 style={{marginTop: '3px', color: '#cdcdcd', letterSpacing: '1px'}}>Online Flashcards</h5>
+                        </div>
+                    </Link>
                 </div>
             </div>
         )

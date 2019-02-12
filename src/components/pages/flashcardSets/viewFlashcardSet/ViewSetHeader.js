@@ -1,13 +1,16 @@
 import React, { Component } from 'react';
 // import PropTypes from 'prop-types'
 
-class PageHeader extends Component {
+class ViewSetHeader extends Component {
     render() {
         return (
             <div style={headerStyle}>
-                <p style={{padding: '10px', margin: '0', color: '#006298', marginRight: 'auto'}}>Chapter 1: Ten Principles of Economics</p>
+                <p style={{padding: '10px', margin: '0', color: '#006298'}}>Chapter 1: Ten Principles of Economics</p>
+                <p style={privacyStyle}>PRIVATE</p>
                 <form>
-                    <input type='submit' value='Edit Set' style={editStyle}/>
+                    <input type='submit' value='Study' style={editStyle}/>
+                    <input type='submit' value='Edit' style={editStyle}/>
+                    <input type='submit' value='Share' style={editStyle}/>
                 </form>
             </div>
         )
@@ -42,6 +45,17 @@ const editStyle = {
     border: 'none',
     marginRight: '10px'
 };
+const privacyStyle = {
+    background: '#006298',
+    // padding: '7px',
+    // paddingRight: '10px',
+    // paddingLeft: '10px',
+    color: 'white',
+    marginLeft: '4px',
+    marginRight: 'auto',
+    fontSize: '10px',
+    padding: '4px'
+};
 
 
-export default PageHeader;
+export default ViewSetHeader;

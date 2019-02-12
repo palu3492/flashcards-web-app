@@ -1,50 +1,40 @@
 import React, { Component } from 'react';
+import { BrowserRouter as Router, Route } from 'react-router-dom'
 import './App.css';
-import Header from './components/layout/header.js';
-import Footer from './components/layout/footer.js';
-import Flashcards from './components/Flashcards.js';
-import PageHeader from './components/pageheader.js';
+import Header from './components/templateLayout/Header.js';
+import Footer from './components/templateLayout/Footer.js';
+import ViewFlashcardSet from './components/pages/flashcardSets/viewFlashcardSet/ViewFlashcardSet.js';
+import EditFlashcardSet from './components/pages/flashcardSets/editFlashcardSet/EditFlashcardSet.js';
+import { Link } from 'react-router-dom';
 
 class App extends Component {
 
-    state = {
-        flashcards:[
-            {
-                id: 1,
-                title: 'Scarcity',
-                definition: 'The limited nature of society’s resources'
-            },
-            {
-                id: 2,
-                title: 'Economics',
-                definition: 'The study of how society manages its scarce resources'
-            },
-            {
-                id: 3,
-                title: 'Efficiency',
-                definition: 'The property of society getting the most it can from its scarce resources'
-            }
-
-        ]
-    };
-
-
     render() {
         return (
-          <div className="App">
-            <div id='container'>
-                <div id='side-left'/>
-                <Header/>
-                <div id='side-right'/>
+            <Router>
+                <div className="App">
+                <div id='container'>
+                    <div id='side-left'/>
+                    <Header/>
+                    <div id='side-right'/>
 
-                <div id='content'>
-                    <PageHeader/>
-                    <Flashcards flashcards={this.state.flashcards}/>
+                    <div id='content'>
+                        <Route exact path='/' render={props => (
+                            <React.Fragment>
+                                <Link to="/view">View</Link>
+                                <br/>
+                                <br/>
+                                <Link to="/edit">Edit</Link>
+                            </React.Fragment>
+                        )}/>
+                        <Route path='/view' component={ViewFlashcardSet}/>
+                        <Route path='/edit' component={EditFlashcardSet}/>
+                    </div>
+
+                    <Footer id='footer'/>
                 </div>
-
-                <Footer id='footer'/>
-            </div>
-          </div>
+                </div>
+            </Router>
         );
     }
 }
