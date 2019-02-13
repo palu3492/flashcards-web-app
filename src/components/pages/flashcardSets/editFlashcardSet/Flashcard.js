@@ -3,28 +3,29 @@ import './flashcards.css';
 
 class Flashcard extends Component {
 
+
     render() {
-        const { title, definition} = this.props.flashcard;
+        const { id, term, definition} = this.props.flashcard;
         return (
             <div className='flashcard'>
-                <div style={titleStyle}><textarea style={textareaStyle}>{title}</textarea></div>
-                <div style={definitionStyle}><textarea style={textareaStyle}>{definition}</textarea></div>
+                <div style={termStyle}><textarea key={"term"+id.toString()} style={textareaStyle} value={term} placeholder='Term' name='term' onChange={this.props.inputChange.bind(this, id)}/></div>
+                <div style={definitionStyle}><textarea key={"definition"+id.toString()} style={textareaStyle} value={definition} placeholder='Definition' name='definition' onChange={this.props.inputChange.bind(this, id)}/></div>
             </div>
         )
     }
 }
 
-const titleStyle = {
+const termStyle = {
     background: '#f2f9fc',
     minHeight: '56px',
-    boxShadow: '1px 1px 5px #7a7a7a',
-    width: '30%'
+    width: '30%',
+    border: '1px solid #384975'
 };
 const definitionStyle = {
     background: '#ffffff',
     minHeight: '56px',
-    boxShadow: '1px 1px 5px #7a7a7a',
-    width: '68%'
+    width: '68%',
+    border: '1px solid #384975'
 };
 const textareaStyle = {
     padding: '10px',
@@ -35,7 +36,8 @@ const textareaStyle = {
     background: 'none',
     border: 'none',
     resize: 'none',
-    outline: 'none'
+    outline: 'none',
+    overflow: 'hidden',
 };
 
 

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 
-class AddFlashcard extends Component {
+class SaveSet extends Component {
     state = {
         title: ''
     };
@@ -17,7 +17,7 @@ class AddFlashcard extends Component {
         return (
             <div style={{width:'100%', textAlign: 'center'}}>
                 <form onSubmit={this.onSubmit}>
-                    <input type='submit' value='Add flashcard' style={addStyle}/>
+                    <input type='submit' value='Save' style={saveStyle}/>
                 </form>
             </div>
         )
@@ -25,13 +25,13 @@ class AddFlashcard extends Component {
 
 }
 
-const addStyle = {
-    padding: '20px 30px',
-    border: '2px dashed rgb(191, 191, 191)',
-    background: 'white',
+const saveStyle = {
     cursor: 'pointer',
-    margin: '30px',
+    border: 'none',
+    color: 'white',
+    background: 'rgb(0, 98, 152)',
+    padding: '10px 30px'
 };
 
 
-export default AddFlashcard;
+export default SaveSet;

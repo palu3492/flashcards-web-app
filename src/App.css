@@ -23,7 +23,7 @@ input[type=submit]{
 #container{
     display: grid;
     grid-template-columns: 1fr 6fr 1fr;
-    grid-template-rows: auto calc(100vh - 76px) 0;
+    grid-template-rows: 76px calc(100vh - 76px) 0;
     grid-template-areas:
             "side1 header side2"
             ". content ."

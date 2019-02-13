@@ -1,37 +1,19 @@
 import React, { Component } from 'react';
 import Flashcards from './Flashcards.js';
 import EditSetHeader from './EditSetHeader.js';
+import AddFlashcard from "./AddFlashcard";
+import SaveSet from "./SaveSet";
 
 class EditFlashcardSet extends Component {
 
-    state = {
-        flashcards:[
-            {
-                id: 1,
-                title: 'Scarcity',
-                definition: 'The limited nature of society’s resources'
-            },
-            {
-                id: 2,
-                title: 'Economics',
-                definition: 'The study of how society manages its scarce resources'
-            },
-            {
-                id: 3,
-                title: 'Efficiency',
-                definition: 'The property of society getting the most it can from its scarce resources'
-            }
-
-        ]
-    };
-
-
     render() {
         return (
-            <React.Fragment>
+            <div>
                 <EditSetHeader/>
-                <Flashcards flashcards={this.state.flashcards}/>
-            </React.Fragment>
+                <Flashcards flashcards={this.props.flashcards} inputChange={this.props.inputChange}/>
+                <AddFlashcard/>
+                <SaveSet/>
+            </div>
         );
     }
 }

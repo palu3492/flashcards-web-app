@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom'
 // import PropTypes from 'prop-types'
 
 class ViewSetHeader extends Component {
@@ -7,11 +8,13 @@ class ViewSetHeader extends Component {
             <div style={headerStyle}>
                 <p style={{padding: '10px', margin: '0', color: '#006298'}}>Chapter 1: Ten Principles of Economics</p>
                 <p style={privacyStyle}>PRIVATE</p>
-                <form>
+                <Link to="/study">
                     <input type='submit' value='Study' style={editStyle}/>
+                </Link>
+                <Link to="/edit">
                     <input type='submit' value='Edit' style={editStyle}/>
-                    <input type='submit' value='Share' style={editStyle}/>
-                </form>
+                </Link>
+                <input type='submit' value='Share' style={editStyle}/>
             </div>
         )
     }
@@ -46,7 +49,7 @@ const editStyle = {
     marginRight: '10px'
 };
 const privacyStyle = {
-    background: '#006298',
+    background: 'rgb(180, 180, 180)',
     // padding: '7px',
     // paddingRight: '10px',
     // paddingLeft: '10px',
