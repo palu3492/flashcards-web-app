@@ -6,42 +6,9 @@ import Footer from './components/templateLayout/Footer.js';
 import ViewFlashcardSet from './components/pages/flashcardSets/viewFlashcardSet/ViewFlashcardSet.js';
 import EditFlashcardSet from './components/pages/flashcardSets/editFlashcardSet/EditFlashcardSet.js';
 import { Link } from 'react-router-dom';
+import ViewAsFlashcards from "./components/pages/flashcardSets/viewAsFlashcards/ViewAsFlashcards";
 
 class App extends Component {
-
-    state = {
-        flashcards:[
-            {
-                id: 1,
-                term: 'Scarcity',
-                definition: 'The limited nature of society’s resources'
-            },
-            {
-                id: 2,
-                term: 'Economics',
-                definition: 'The study of how society manages its scarce resources'
-            },
-            {
-                id: 3,
-                term: 'Efficiency',
-                definition: 'The property of society getting the most it can from its scarce resources'
-            }
-
-        ]
-    };
-
-    onChange = (id, e) => {
-        this.setState({ flashcards: this.state.flashcards.map(flashcard => {
-            if(flashcard.id === id) {
-                if(e.target.name === 'term'){
-                    flashcard.term = e.target.value;
-                } else {
-                    flashcard.definition = e.target.value;
-                }
-            }
-            return flashcard
-        }) })
-    };
 
     render() {
         return (
@@ -61,8 +28,9 @@ class App extends Component {
                                 <Link to="/edit">Edit</Link>
                             </React.Fragment>
                         )}/>
-                        <Route path='/view' component={() => <ViewFlashcardSet flashcards={this.state.flashcards}/>}/>
-                        <Route path='/edit' component={() => <EditFlashcardSet flashcards={this.state.flashcards} inputChange={this.onChange}/>}/>
+                        <Route path='/view' component={() => <ViewFlashcardSet/>}/>
+                        <Route path='/edit' component={() => <EditFlashcardSet/>}/>
+                        <Route path='/study' component={() => <ViewAsFlashcards/>}/>
                     </div>
 
                     <Footer id='footer'/>

@@ -2,15 +2,10 @@ import React, { Component } from 'react';
 
 
 class AddFlashcard extends Component {
-    state = {
-        title: ''
-    };
 
     onSubmit = (e) => {
         e.preventDefault();
-        // this.props.addTodo(this.state.title);
-        // this.setState({title: ''})
-        console.log('pressed');
+        this.props.addFlashcard();
     };
 
     render() {

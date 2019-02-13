@@ -6,17 +6,17 @@ class EditSetHeader extends Component {
     render() {
         return (
             <div style={headerStyle}>
-               <input type='text' style={textInputStyle} value='Chapter 1: Ten Principles of Economics'></input>
+               <input type='text' style={textInputStyle} value={this.props.setName} onChange={this.props.inputChange}/>
                 <div style={privacyContainerStyle}>
                     <div style={{display: 'flex', flexDirection: 'row'}}>
-                        <p style={privacyStyle1}>PRIVATE</p>
-                        <div style={arrowStyle}>V</div>
+                        <p style={privacyStyle}>PRIVATE</p>
+                        <div style={arrowStyle}>^</div>
                     </div>
-                    {/*<div style={privacyDropStyle}>*/}
-                        {/*<p style={privacyStyle2}>PUBLIC</p>*/}
-                        {/*<p style={privacyStyle2}>PRIVATE</p>*/}
-                        {/*<p style={privacyStyle2}>UNLISTED</p>*/}
-                    {/*</div>*/}
+                    <div style={privacyDropStyle}>
+                        <p style={privacyStyle}>PUBLIC</p>
+                        <p style={privacyStyle}>PRIVATE</p>
+                        <p style={privacyStyle}>UNLISTED</p>
+                    </div>
                 </div>
                 <Link to="/view">
                     <input type='submit' value='Save' style={editStyle}/>
@@ -44,34 +44,6 @@ const headerStyle = {
     flexDirection: 'row',
     justifyContent: 'flex-end'
 };
-const editStyle = {
-    borderRadius: '25px',
-    background: '#006298',
-    padding: '7px',
-    paddingRight: '10px',
-    paddingLeft: '10px',
-    color: 'white',
-    border: 'none',
-    marginRight: '10px'
-};
-const privacyStyle1 = {
-    background: 'rgb(180, 180, 180)',
-    color: 'white',
-    fontSize: '10px',
-    padding: '4px',
-    float: 'left'
-};
-const privacyStyle2 = {
-    background: 'rgb(180, 180, 180)',
-    color: 'white',
-    fontSize: '10px',
-    padding: '4px'
-};
-const privacyContainerStyle = {
-    marginLeft: '10px',
-    marginRight: 'auto',
-    cursor: 'pointer'
-};
 
 const textInputStyle = {
     margin: '10px',
@@ -86,18 +58,45 @@ const textInputStyle = {
     width: '290px',
 };
 
+const privacyContainerStyle = {
+    marginLeft: '10px',
+    marginRight: 'auto',
+    cursor: 'pointer',
+};
+const privacyStyle = {
+    background: 'rgb(180, 180, 180)',
+    color: 'white',
+    fontSize: '10px',
+    padding: '4px',
+    float: 'left'
+};
 const privacyDropStyle = {
-    position: 'absolute'
+    position: 'absolute',
+    display: 'flex',
+    flexDirection: 'column',
+    marginTop: '1px'
 };
 
-const arrowStyle = {background:'rgb(153, 153, 153)', float:'left', color: 'white', fontSize: '10px',
+const arrowStyle = {
+    background:'rgb(153, 153, 153)',
+    float:'left',
+    color: 'white',
+    fontSize: '10px',
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
     paddingLeft: '5px',
     paddingRight: '5px',
 };
-
-
+const editStyle = {
+    borderRadius: '25px',
+    background: '#006298',
+    padding: '7px',
+    paddingRight: '10px',
+    paddingLeft: '10px',
+    color: 'white',
+    border: 'none',
+    marginRight: '10px'
+};
 
 export default EditSetHeader;

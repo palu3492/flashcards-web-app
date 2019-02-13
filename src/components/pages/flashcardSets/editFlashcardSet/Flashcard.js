@@ -3,13 +3,12 @@ import './flashcards.css';
 
 class Flashcard extends Component {
 
-
     render() {
         const { id, term, definition} = this.props.flashcard;
         return (
             <div className='flashcard'>
-                <div style={termStyle}><textarea key={"term"+id.toString()} style={textareaStyle} value={term} placeholder='Term' name='term' onChange={this.props.inputChange.bind(this, id)}/></div>
-                <div style={definitionStyle}><textarea key={"definition"+id.toString()} style={textareaStyle} value={definition} placeholder='Definition' name='definition' onChange={this.props.inputChange.bind(this, id)}/></div>
+                <div style={termStyle}><textarea id={"term"+id.toString()} style={textareaStyle} value={term} placeholder='Term' name='term' onChange={this.props.inputChange.bind(this, id)}/></div>
+                <div style={definitionStyle}><textarea id={"definition"+id.toString()} style={textareaStyle} value={definition} placeholder='Definition' name='definition' onChange={this.props.inputChange.bind(this, id)}/></div>
             </div>
         )
     }
@@ -17,13 +16,15 @@ class Flashcard extends Component {
 
 const termStyle = {
     background: '#f2f9fc',
-    minHeight: '56px',
+    // minHeight: '56px',
+    height:'100%',
     width: '30%',
     border: '1px solid #384975'
 };
 const definitionStyle = {
     background: '#ffffff',
-    minHeight: '56px',
+    // minHeight: '56px',
+    height:'100%',
     width: '68%',
     border: '1px solid #384975'
 };

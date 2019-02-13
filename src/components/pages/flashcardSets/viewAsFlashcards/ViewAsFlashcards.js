@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import Flashcards from './Flashcards.js';
-import ViewSetHeader from './ViewSetHeader.js';
+import ViewFlashcardsHeader from './ViewFlashcardsHeader.js';
+import StudyFlashcards from './StudyFlashcards.js';
 
-class ViewFlashcardSet extends Component {
+class ViewAsFlashcards extends Component {
 
     state = {
         flashcards:[
@@ -29,11 +29,11 @@ class ViewFlashcardSet extends Component {
     render() {
         return (
             <React.Fragment>
-                <ViewSetHeader/>
-                <Flashcards flashcards={this.state.flashcards}/>
+                <ViewFlashcardsHeader/>
+                <StudyFlashcards flashcards={this.state.flashcards}/>
             </React.Fragment>
         );
     }
 }
 
-export default ViewFlashcardSet;
+export default ViewAsFlashcards;

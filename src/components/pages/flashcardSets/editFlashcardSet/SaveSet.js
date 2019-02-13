@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import { Link } from 'react-router-dom'
 
 class SaveSet extends Component {
     state = {
@@ -16,9 +16,9 @@ class SaveSet extends Component {
     render() {
         return (
             <div style={{width:'100%', textAlign: 'center'}}>
-                <form onSubmit={this.onSubmit}>
+                <Link to="/view">
                     <input type='submit' value='Save' style={saveStyle}/>
-                </form>
+                </Link>
             </div>
         )
     }
@@ -30,7 +30,8 @@ const saveStyle = {
     border: 'none',
     color: 'white',
     background: 'rgb(0, 98, 152)',
-    padding: '10px 30px'
+    padding: '10px 30px',
+    marginBottom: '10px'
 };
 
 
