@@ -5,7 +5,7 @@ class StudyFlashcards extends Component {
 
     state = {
         flipped: false,
-        cardNumber: 1,
+        cardNumber: 0,
     };
 
     flipClick = () => {
@@ -22,10 +22,15 @@ class StudyFlashcards extends Component {
     };
 
     getValue = () => {
+        const flashcard = this.props.flashcards[this.state.cardNumber];
         if(!this.state.flipped) {
-            return this.props.flashcards[this.state.cardNumber].term;
+            return flashcard.term;
         }
-        return this.props.flashcards[this.state.cardNumber].definition;
+        return flashcard.definition;
+    };
+
+    getCountText = () => {
+        return (this.state.cardNumber+1).toString() + "/" + this.props.flashcards.length.toString();
     };
 
     render() {
@@ -33,6 +38,7 @@ class StudyFlashcards extends Component {
             <div style={outerContainerStyle}>
                 <div style={flashcardContainerStyle}>
                     <h1 style={{fontWeight: 'normal', padding: '20px'}}>{this.getValue()}</h1>
+                    <p style={cardCountStyle}>{this.getCountText()}</p>
                 </div>
                 <div style={buttonsContainerStyle}>
                     <FlahcardButton value='Flip' onClick={this.flipClick}/>
@@ -63,6 +69,14 @@ const buttonsContainerStyle = {
     display: 'flex',
     justifyContent: 'space-evenly',
     flexDirection: 'column'
+};
+const cardCountStyle = {
+    position: 'absolute',
+    alignSelf: 'flex-end',
+    width: '600px',
+    textAlign: 'right',
+    padding: '20px',
+    color: 'grey'
 };
 
 export default StudyFlashcards;

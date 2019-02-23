@@ -7,14 +7,14 @@ class Header extends Component {
     render() {
         return (
             <div style={headerStyle}>
-                {/*<div style={titleContainer}>*/}
-                    {/*<Link to="/">*/}
-                        {/*<div style={{textAlign: 'center', cursor: 'pointer'}}>*/}
-                            {/*<h1>Quiz Saver</h1>*/}
-                            {/*<h5 style={subTitleStyle}>Online Flashcards</h5>*/}
-                        {/*</div>*/}
-                    {/*</Link>*/}
-                {/*</div>*/}
+                <div style={titleContainer}>
+                    <Link to="/">
+                        <div style={{textAlign: 'center', cursor: 'pointer'}}>
+                            <h1>Quiz Saver</h1>
+                            <h5 style={subTitleStyle}>Virtual Flashcards</h5>
+                        </div>
+                    </Link>
+                </div>
                 <HeaderButton title='Account'/>
             </div>
         )
