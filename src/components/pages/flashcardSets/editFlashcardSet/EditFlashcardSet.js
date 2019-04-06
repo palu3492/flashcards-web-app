@@ -24,9 +24,23 @@ class EditFlashcardSet extends Component {
                 id: 3,
                 term: 'Efficiency',
                 definition: 'The property of society getting the most it can from its scarce resources'
+            },
+            {
+                id: 4,
+                term: 'Equality',
+                definition: 'The property of distributing economic prosperity uniformly among the members of society'
+            },
+            {
+                id: 5,
+                term: 'Opportunity cost',
+                definition: 'Whatever must be given up to obtain some item'
+            },
+            {
+                id: 6,
+                term: 'Marginal change',
+                definition: 'A small incremental adjustment to a plan of action'
             }
-
-        ],
+],
         name: 'Chapter 1: Ten Principles of Economics'
     };
 
