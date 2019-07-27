@@ -9,8 +9,8 @@ class EditSetHeader extends Component {
                <input type='text' style={textInputStyle} value={this.props.setName} onChange={this.props.inputChange}/>
                 <div style={privacyContainerStyle}>
                     <div style={{display: 'flex', flexDirection: 'row'}}>
-                        <p style={privacyStyle}>PRIVATE</p>
-                        <div style={arrowStyle}>^</div>
+                        <p style={privacyStyle}>PUBLIC</p>
+                        <div style={arrowStyle}></div>
                     </div>
                     <div style={privacyDropStyle}>
                         <p style={privacyStyle}>PUBLIC</p>
@@ -72,9 +72,10 @@ const privacyStyle = {
 };
 const privacyDropStyle = {
     position: 'absolute',
-    display: 'flex',
+    //display: 'flex',
     flexDirection: 'column',
-    marginTop: '1px'
+    marginTop: '1px',
+    display: 'none'
 };
 
 const arrowStyle = {

@@ -7,7 +7,7 @@ class ViewSetHeader extends Component {
         return (
             <div style={headerStyle}>
                 <p style={{padding: '10px', margin: '0', color: '#006298'}}>Chapter 1: Ten Principles of Economics</p>
-                <p style={privacyStyle}>PRIVATE</p>
+                <p style={privacyStyle}>PUBLIC</p>
                 <Link to="/study">
                     <input type='submit' value='Study' style={editStyle}/>
                 </Link>

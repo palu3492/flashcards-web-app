@@ -40,7 +40,7 @@ class EditFlashcardSet extends Component {
                 term: 'Marginal change',
                 definition: 'A small incremental adjustment to a plan of action'
             }
-],
+    ],
         name: 'Chapter 1: Ten Principles of Economics'
     };
 

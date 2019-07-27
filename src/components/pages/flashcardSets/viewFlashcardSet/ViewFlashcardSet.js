@@ -5,6 +5,13 @@ import ViewSetHeader from './ViewSetHeader.js';
 class ViewFlashcardSet extends Component {
 
     state = {
+        set: {
+
+        },
+        isLoad: false
+    };
+    /*
+    state = {
         flashcards:[
             {
                 id: 1,
@@ -38,6 +45,42 @@ class ViewFlashcardSet extends Component {
             }
         ]
     };
+
+    constructor(props) {
+        super(props);
+        this.state = {
+            item:[],
+            isLoaded: false
+        }
+    }
+    */
+    componentDidMount(){
+        const api = 'https://my-json-server.typicode.com/palu3492/react-flashcard-app/db';
+        fetch(api)
+            .then(res => res.json())
+            .then(json => {
+                this.setState({
+                    isLoaded: true,
+                    items: json,
+                })
+            });
+    }
+
+    /*
+    if(!isLoaded){
+            return <div> Loading... </div>
+        }else{
+            return (
+                <ul>
+                {items['flashcards'].map(item => (
+                    <li key={item.id}>
+                        {item.term}
+                    </li>
+                ))};
+                </ul>
+            );
+        }
+     */
 
 
     render() {

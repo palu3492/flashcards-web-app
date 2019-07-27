@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Flashcard from './Flashcard.js';
 import './flashcards.css';
-
+// list of flashcard component for viewing flashcard set
 class Flashcards extends Component {
 
     render() {
